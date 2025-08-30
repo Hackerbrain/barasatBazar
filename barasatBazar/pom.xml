@@ -59,6 +59,12 @@
 			<version>42.7.7</version>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.personal</groupId>
+			<artifactId>common</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

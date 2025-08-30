@@ -5,6 +5,7 @@ import com.ekart.barasatBazar.dto.ProductDetailsDTO;
 import com.ekart.barasatBazar.entity.ProductDetailsEntity;
 import com.ekart.barasatBazar.entity.ProductEntity;
 import com.ekart.barasatBazar.repository.ProductRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,5 +58,13 @@ public class ProductService {
 
         dto.setProductDetail(detailDTOs);
         return dto;
+    }
+
+    public ProductDTO addProduct(long id, ProductDTO product) {
+        ProductEntity existingStudent = ProductRepository.findBy(id)
+                .orElseThrow(() -> new RuntimeException());
+        BeanUtils.copyProperties(product, existingStudent);
+        ProductEntity studentEntity = productRepository.save(existingStudent);
+        return productMapper.toDto(studentEntity);
     }
 }

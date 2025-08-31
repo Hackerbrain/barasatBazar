@@ -1,6 +1,7 @@
 package com.ekart.barasatBazar.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.personal.common.annotation.SkipMapping;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,6 +14,7 @@ public class ProductDetailsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SkipMapping
     private Long detailId;
 
     // Foreign key to ProductEntity

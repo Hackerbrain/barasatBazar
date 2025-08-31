@@ -1,5 +1,6 @@
 package com.ekart.barasatBazar.entity;
 
+import com.personal.common.annotation.SkipMapping;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ import java.util.List;
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SkipMapping
     private Long id;
 
     @Column(nullable=false)

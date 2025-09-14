@@ -64,8 +64,18 @@
 			<artifactId>common</artifactId>
 			<version>1.6.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.personal</groupId>
+			<artifactId>common</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.8.13</version>
+		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>

@@ -1,10 +1,11 @@
 package com.ekart.barasatBazar.entity;
 
-import com.personal.common.annotation.SkipMapping;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -16,9 +17,9 @@ import java.util.List;
         })
 public class ProductEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @SkipMapping
-    private Long id;
+    @GeneratedValue
+    @UuidGenerator(style = UuidGenerator.Style.RANDOM)
+    private UUID id;
 
     @Column(nullable=false)
     private String productName;

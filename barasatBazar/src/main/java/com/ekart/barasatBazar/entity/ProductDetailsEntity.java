@@ -1,11 +1,10 @@
 package com.ekart.barasatBazar.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.personal.common.annotation.SkipMapping;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.UuidGenerator;
 
-import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -13,9 +12,9 @@ import java.util.List;
 public class ProductDetailsEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @SkipMapping
-    private Long detailId;
+    @GeneratedValue
+    @UuidGenerator(style = UuidGenerator.Style.RANDOM)
+    private UUID detailId;
 
     // Foreign key to ProductEntity
     @ManyToOne
